@@ -44,15 +44,9 @@ class MainWindow(QtWidgets.QMainWindow):
                                        click_type_to_add_keypoint=self.cfg.click_type_to_add_keypoint)
         
         self.keypoint_selector = KeypointButtons(keys, colormap=cfg.viz.colormap, parent=self)
-        self.ui.verticalLayout_2.addWidget(self.keypoint_selector)
-        
-        # should do this somewhere else
-        self.ui.keypoints_box.setStyleSheet('QGroupBox {background-color: rgb(80,80,80)}'
-                                            'QGroupBox::title {background: transparent}')
-        self.ui.toolbox.setStyleSheet('QGroupBox {background-color: rgb(80,80,80)}'
-                                            'QGroupBox::title {background: transparent}')
-        # self.ui.keypoints_box.title().setStyleSheet('background: transparent')
-        
+        self.ui.verticalLayout.addWidget(self.keypoint_selector)
+
+
         # connect signals and slots
         self.scene.click.connect(self.keypoints.receive_click)
         self.scene.move.connect(self.keypoints.receive_move)

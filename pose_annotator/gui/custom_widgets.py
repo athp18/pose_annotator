@@ -500,10 +500,12 @@ class KeypointGroup(QtWidgets.QWidget):
         # self.broadcast_data()
         
     def increment_selected(self):
-        self.set_selected(self.index + 1)
+        if self.index < self.N-1:
+            self.set_selected(self.index + 1)
         
     def decrement_selected(self):
-        self.set_selected(self.index - 1)
+        if self.index>0:
+            self.set_selected(self.index - 1)
         
     def clear_selected(self):
         self.get_keypoint(self.index).clear()
@@ -641,7 +643,7 @@ class KeypointGroup(QtWidgets.QWidget):
         return self.keypoints[key]
 
 
-class KeypointButtons(QtWidgets.QWidget):
+class KeypointButtons(QtWidgets.QScrollArea):
     selected = Signal(int)
     
     def __init__(self, keypoint_list, colormap: str='viridis',parent=None):

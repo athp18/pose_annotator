@@ -35,64 +35,19 @@ class Ui_MainWindow(object):
         sizePolicy.setVerticalStretch(0)
         sizePolicy.setHeightForWidth(self.centralwidget.sizePolicy().hasHeightForWidth())
         self.centralwidget.setSizePolicy(sizePolicy)
-        self.horizontalLayout_2 = QHBoxLayout(self.centralwidget)
-        self.horizontalLayout_2.setObjectName(u"horizontalLayout_2")
-        self.horizontalLayout = QHBoxLayout()
+        self.horizontalLayout = QHBoxLayout(self.centralwidget)
         self.horizontalLayout.setObjectName(u"horizontalLayout")
         self.horizontalLayout.setContentsMargins(10, 10, 10, 10)
         self.verticalLayout = QVBoxLayout()
         self.verticalLayout.setObjectName(u"verticalLayout")
-        self.toolbox = QGroupBox(self.centralwidget)
-        self.toolbox.setObjectName(u"toolbox")
-        self.gridLayout_2 = QGridLayout(self.toolbox)
-        self.gridLayout_2.setObjectName(u"gridLayout_2")
-        self.toolButton = QToolButton(self.toolbox)
-        self.toolButton.setObjectName(u"toolButton")
-        self.toolButton.setMaximumSize(QSize(30, 30))
-
-        self.gridLayout_2.addWidget(self.toolButton, 0, 0, 1, 1)
-
-        self.toolButton_2 = QToolButton(self.toolbox)
-        self.toolButton_2.setObjectName(u"toolButton_2")
-        self.toolButton_2.setMaximumSize(QSize(30, 30))
-
-        self.gridLayout_2.addWidget(self.toolButton_2, 0, 1, 1, 1)
-
-        self.toolButton_3 = QToolButton(self.toolbox)
-        self.toolButton_3.setObjectName(u"toolButton_3")
-
-        self.gridLayout_2.addWidget(self.toolButton_3, 1, 0, 1, 1)
-
-        self.toolButton_4 = QToolButton(self.toolbox)
-        self.toolButton_4.setObjectName(u"toolButton_4")
-
-        self.gridLayout_2.addWidget(self.toolButton_4, 1, 1, 1, 1)
-
-
-        self.verticalLayout.addWidget(self.toolbox)
-
-        self.keypoints_box = QGroupBox(self.centralwidget)
-        self.keypoints_box.setObjectName(u"keypoints_box")
-        self.verticalLayout_2 = QVBoxLayout(self.keypoints_box)
-        self.verticalLayout_2.setObjectName(u"verticalLayout_2")
-
-        self.verticalLayout.addWidget(self.keypoints_box)
-
-        self.verticalLayout.setStretch(0, 1)
-        self.verticalLayout.setStretch(1, 4)
-
         self.horizontalLayout.addLayout(self.verticalLayout)
-
         self.widget = VideoPlayer(self.centralwidget)
         self.widget.setObjectName(u"widget")
         sizePolicy.setHeightForWidth(self.widget.sizePolicy().hasHeightForWidth())
         self.widget.setSizePolicy(sizePolicy)
-
         self.horizontalLayout.addWidget(self.widget)
-
         self.horizontalLayout.setStretch(1, 5)
 
-        self.horizontalLayout_2.addLayout(self.horizontalLayout)
 
         MainWindow.setCentralWidget(self.centralwidget)
         self.menubar = QMenuBar(MainWindow)
@@ -125,12 +80,6 @@ class Ui_MainWindow(object):
         self.actionOpen_image_directory.setText(QCoreApplication.translate("MainWindow", u"Open image directory", None))
         self.actionOpen_video.setText(QCoreApplication.translate("MainWindow", u"Open video", None))
         self.actionSave.setText(QCoreApplication.translate("MainWindow", u"Save", None))
-        self.toolbox.setTitle(QCoreApplication.translate("MainWindow", u"Tools", None))
-        self.toolButton.setText(QCoreApplication.translate("MainWindow", u"...", None))
-        self.toolButton_2.setText(QCoreApplication.translate("MainWindow", u"...", None))
-        self.toolButton_3.setText(QCoreApplication.translate("MainWindow", u"...", None))
-        self.toolButton_4.setText(QCoreApplication.translate("MainWindow", u"...", None))
-        self.keypoints_box.setTitle(QCoreApplication.translate("MainWindow", u"Keypoints", None))
         self.menuFile.setTitle(QCoreApplication.translate("MainWindow", u"File", None))
         self.menuOpen_image_or_video.setTitle(QCoreApplication.translate("MainWindow", u"Open image or video", None))
     # retranslateUi
