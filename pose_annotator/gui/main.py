@@ -222,7 +222,6 @@ class MainWindow(QtWidgets.QMainWindow):
         image_names = None
         if self.cfg.save_image_names:
             image_names = self.player.videoView.get_image_names()
-
         df = utils.convert_data_to_df(self.data, image_names=image_names)
         df.to_csv(self.save_filename)
         print('saving to {}'.format(self.save_filename))

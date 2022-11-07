@@ -20,11 +20,11 @@ def convert_data_to_df(data: list, image_names=None) -> pd.DataFrame:
     # rows = {}
     indices = []
     rows = []
-    keys = []
+    
     for i, element in enumerate(data):
         row = OrderedDict()
-        if not has_any_data[i]:
-            continue
+        if not has_any_data[i]: continue
+        keys = []
         for key, value in element.items():
             if value is None or np.isnan(value).sum() > 0:
                 value = [np.nan, np.nan]
@@ -34,10 +34,10 @@ def convert_data_to_df(data: list, image_names=None) -> pd.DataFrame:
             row[key + '_x'] = value[0]
             row[key + '_y'] = value[1]
             row[key + '_p'] = p
-            if i == 0:
-                keys.append(key + '_x')
-                keys.append(key + '_y')
-                keys.append(key + '_p')
+            keys.append(key + '_x')
+            keys.append(key + '_y')
+            keys.append(key + '_p')
+            
         rows.append(row)
         indices.append(i)
 
