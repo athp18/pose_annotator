@@ -7,7 +7,7 @@ points per frame. Please consider contributing for multiple instances per frame!
 
 ## Usage
 Customize [default_config.yaml](pose_annotator/gui/default_config.yaml) then launch using
- `pose_annotator usr_cfg=path/to/custom/config.yaml` 
+ `pose_annotator user_cfg=path/to/custom/config.yaml` 
  
 #### Hotkeys 
 * `Ctrl+S` save
