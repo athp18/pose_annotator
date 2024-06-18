@@ -3,7 +3,7 @@ A simple GUI for clicking on keypoints for training pose estimation models. Curr
 points per frame. Please consider contributing for multiple instances per frame!
 
 ## Installation
-* pip install pose-annotator
+Build by cloning this repo, then navigating to the repo and running 'pip install -e .'
 
 ## Usage
 Customize [default_config.yaml](pose_annotator/gui/default_config.yaml) then launch using
