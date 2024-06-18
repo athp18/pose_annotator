@@ -2,6 +2,12 @@ keypoints:
   - one
   - two
   - three
+labels:
+  - rear
+  - dart
+  - sniff
+  - turn left
+  - groom
 viz:
   colormap: viridis
   radius: 5

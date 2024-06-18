@@ -14,7 +14,6 @@ from PySide2.QtWidgets import *
 
 from pose_annotator.gui.custom_widgets import *
 
-
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         if not MainWindow.objectName():
@@ -38,8 +37,41 @@ class Ui_MainWindow(object):
         self.horizontalLayout = QHBoxLayout(self.centralwidget)
         self.horizontalLayout.setObjectName(u"horizontalLayout")
         self.horizontalLayout.setContentsMargins(10, 10, 10, 10)
+
         self.verticalLayout = QVBoxLayout()
         self.verticalLayout.setObjectName(u"verticalLayout")
+
+        # Add the new UI elements for labeling frames
+        self.individualLabelLayout = QHBoxLayout()
+        self.individualLabelLayout.setObjectName(u"individualLabelLayout")
+        self.labelLabel = QLabel(self.centralwidget)
+        self.labelLabel.setText("Assign Label to Current Frame:")
+        self.individualLabelLayout.addWidget(self.labelLabel)
+        self.labelComboBox = QComboBox(self.centralwidget)
+        self.individualLabelLayout.addWidget(self.labelComboBox)
+        self.verticalLayout.addLayout(self.individualLabelLayout)
+
+        self.bulkLabelLayout = QHBoxLayout()
+        self.bulkLabelLayout.setObjectName(u"bulkLabelLayout")
+        self.bulkLabel = QLabel(self.centralwidget)
+        self.bulkLabel.setText("Assign Label to Frames:")
+        self.bulkLabelLayout.addWidget(self.bulkLabel)
+        self.bulkLabelComboBox = QComboBox(self.centralwidget)
+        self.bulkLabelLayout.addWidget(self.bulkLabelComboBox)
+        self.startFrameEdit = QLineEdit(self.centralwidget)
+        self.startFrameEdit.setPlaceholderText("Start Frame")
+        self.bulkLabelLayout.addWidget(self.startFrameEdit)
+        self.endFrameEdit = QLineEdit(self.centralwidget)
+        self.endFrameEdit.setPlaceholderText("End Frame")
+        self.bulkLabelLayout.addWidget(self.endFrameEdit)
+        self.bulkAssignButton = QPushButton(self.centralwidget)
+        self.bulkAssignButton.setText("Assign")
+        self.bulkLabelLayout.addWidget(self.bulkAssignButton)
+        self.bulkLabelCheckBox = QCheckBox(self.centralwidget)
+        self.bulkLabelCheckBox.setText("Enable Bulk Labeling")
+        self.bulkLabelLayout.addWidget(self.bulkLabelCheckBox)
+        self.verticalLayout.addLayout(self.bulkLabelLayout)
+
         self.horizontalLayout.addLayout(self.verticalLayout)
         self.widget = VideoPlayer(self.centralwidget)
         self.widget.setObjectName(u"widget")
@@ -47,7 +79,6 @@ class Ui_MainWindow(object):
         self.widget.setSizePolicy(sizePolicy)
         self.horizontalLayout.addWidget(self.widget)
         self.horizontalLayout.setStretch(1, 5)
-
 
         MainWindow.setCentralWidget(self.centralwidget)
         self.menubar = QMenuBar(MainWindow)
@@ -70,9 +101,7 @@ class Ui_MainWindow(object):
         self.menuOpen_image_or_video.addAction(self.actionOpen_video)
 
         self.retranslateUi(MainWindow)
-
         QMetaObject.connectSlotsByName(MainWindow)
-    # setupUi
 
     def retranslateUi(self, MainWindow):
         MainWindow.setWindowTitle(QCoreApplication.translate("MainWindow", u"MainWindow", None))
@@ -82,5 +111,3 @@ class Ui_MainWindow(object):
         self.actionSave.setText(QCoreApplication.translate("MainWindow", u"Save", None))
         self.menuFile.setTitle(QCoreApplication.translate("MainWindow", u"File", None))
         self.menuOpen_image_or_video.setTitle(QCoreApplication.translate("MainWindow", u"Open image or video", None))
-    # retranslateUi
-
