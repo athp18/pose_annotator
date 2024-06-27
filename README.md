@@ -4,9 +4,9 @@ points per frame. Please consider contributing for multiple instances per frame!
 
 ## Installation
 Run: 
-`git clone https://github.com/athp18/pose_annotator/`
-`pip install --upgrade pip setuptools`
-`pip install -e .`
+* `git clone https://github.com/athp18/pose_annotator/`
+* `pip install --upgrade pip setuptools`
+* `pip install -e .`
 
 ## Usage
 Customize [default_config.yaml](pose_annotator/gui/default_config.yaml) then launch using
