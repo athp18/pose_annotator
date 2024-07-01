@@ -5,6 +5,7 @@ points per frame. Please consider contributing for multiple instances per frame!
 ## Installation
 Run: 
 * `git clone https://github.com/athp18/pose_annotator/`
+* `cd pose_annotator`
 * `pip install --upgrade pip setuptools`
 * `pip install -e .`
 
